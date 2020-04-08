@@ -20,7 +20,8 @@ class MyApp extends StatelessWidget {
 //      title: 'Welcome to Flutter',
 //      home: Scaffold(
       title: "Welcome to Flutter",
-      theme: ThemeData(          // Add the 3 lines from here...
+      theme: ThemeData(
+        // Add the 3 lines from here...
         primaryColor: Colors.purple,
       ),
       home: RandomWords(),
@@ -64,11 +65,11 @@ class RandomWordsState extends State<RandomWords> {
         pair.asPascalCase,
         style: _biggerFont,
       ),
-      trailing: Icon(   // Add the lines from here...
+      trailing: Icon(
         alreadySaved ? Icons.favorite : Icons.favorite_border,
         color: alreadySaved ? Colors.red : null,
       ),
-      onTap: () {      // Add 9 lines from here...
+      onTap: () {
         setState(() {
           if (alreadySaved) {
             _saved.remove(pair);
@@ -82,10 +83,11 @@ class RandomWordsState extends State<RandomWords> {
 
   void _pushSaved() {
     Navigator.of(context).push(
-      MaterialPageRoute<void>(   // Add 20 lines from here...
+      MaterialPageRoute<void>(
+        // Add 20 lines from here...
         builder: (BuildContext context) {
           final Iterable<ListTile> tiles = _saved.map(
-                (WordPair pair) {
+            (WordPair pair) {
               return ListTile(
                 title: Text(
                   pair.asPascalCase,
@@ -94,24 +96,21 @@ class RandomWordsState extends State<RandomWords> {
               );
             },
           );
-          final List<Widget> divided = ListTile
-              .divideTiles(
+          final List<Widget> divided = ListTile.divideTiles(
             context: context,
             tiles: tiles,
-          )
-              .toList();
+          ).toList();
 
-          return Scaffold(         // Add 6 lines from here...
+          return Scaffold(
+            // Add 6 lines from here...
             appBar: AppBar(
               title: Text('Saved Suggestions'),
             ),
             body: ListView(children: divided),
           );
         },
-      ),                       // ... to here.
+      ), // ... to here.
     );
-
-
   }
 
   @override
@@ -119,7 +118,8 @@ class RandomWordsState extends State<RandomWords> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Startup Name Generator'),
-        actions: <Widget>[      // Add 3 lines from here...
+        actions: <Widget>[
+          // Add 3 lines from here...
           IconButton(icon: Icon(Icons.list), onPressed: _pushSaved),
         ],
       ),
