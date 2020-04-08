@@ -1,7 +1,9 @@
 #  Flutter_Practice
 
+### [Dart](https://github.com/gargpriyam21/Flutter_Practice/tree/master/Dart) - 
+Dart file for practicing basic dart programming.
 ### [myapp](https://github.com/gargpriyam21/Flutter_Practice/tree/master/my_app) -
-First Demo Flutter Application to display the count of button pressed
+First Demo Flutter Application to display the count of button pressed.
 ### [startup_namer](https://github.com/gargpriyam21/Flutter_Practice/tree/master/startup_namer) - 
 * Part I: Flutter Application to display infinite list of random names
     * Created a Flutter app from the ground up.
